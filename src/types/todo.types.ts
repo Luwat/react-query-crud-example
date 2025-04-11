@@ -3,3 +3,8 @@ export interface TodoItem {
     title: string;
     complete: boolean;
 }
+
+export interface TodoInput {
+    title: string;
+    complete: boolean;
+}
