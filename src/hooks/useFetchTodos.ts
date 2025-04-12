@@ -3,11 +3,11 @@ import { AxiosResponse } from "axios";
 import { client } from "../api/client";
 import { TodoItem } from "../types/todo.types";
 
-const fetchTodos = async (): Promise<AxiosResponse<TodoItem[], any>> => {
+const fetchTodos = async (): Promise<AxiosResponse<TodoItem[]>> => {
     return await client.get("/");
 }
 
-export const useFetchTodos = (): QueryObserverResult<AxiosResponse<TodoItem[], any>> => {
+export const useFetchTodos = (): QueryObserverResult<AxiosResponse<TodoItem[]>> => {
     return useQuery({
         queryFn: async () => {
             const { data } = await fetchTodos()
