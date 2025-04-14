@@ -17,7 +17,7 @@ function App() {
           <ul>
           {todos?.map(todo => {
             return <li className={`mb-2 text-xl ${todo.complete ? 'line-through' : ''}`} key={todo.id}>{todo.title}
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 ml-2 rounded">Edit</button>
+              <button onClick={() => navigate(`/edit-todo/${todo.id}`)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 ml-2 rounded">Edit</button>
               <button onClick={() => deleteTodo(todo.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 ml-2 rounded">Delete</button>
             </li>
           })}
